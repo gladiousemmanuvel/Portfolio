@@ -1,0 +1,817 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gladious Rosary | Data Analyst</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Inter & Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+    tailwind.config = {
+        theme: {
+            extend: {
+                colors: {
+                    espresso: {
+                        800: '#3A281C',
+                        900: '#2B1E16',
+                        950: '#1A120B',
+                    },
+                    accent: {
+                        terracotta: '#E07A5F',
+                        amber: '#F4A261',
+                        cream: '#FDF8F5'
+                    }
+                },
+                fontFamily: {
+                    sans: ['Plus Jakarta Sans', 'Inter', 'sans-serif'],
+                }
+            }
+        }
+    }
+</script>
+
+<style>
+    body {
+        font-family: 'Plus Jakarta Sans', sans-serif;
+        background-color: #1A120B;
+        color: #FDF8F5;
+    }
+    .hero-glow {
+        background: radial-gradient(circle, rgba(224, 122, 95, 0.18) 0%, rgba(244, 162, 97, 0.08) 50%, transparent 80%);
+    }
+    .glass-card {
+        background: rgba(43, 30, 22, 0.65);
+        backdrop-filter: blur(12px);
+        border: 1px solid rgba(224, 122, 95, 0.2);
+    }
+    .glass-card:hover {
+        border-color: rgba(244, 162, 97, 0.4);
+    }
+</style>
+</head>
+<body class="bg-[#1A120B] text-[#FDF8F5] antialiased selection:bg-accent-terracotta selection:text-white">
+
+    <!-- Navigation Bar -->
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-espresso-950/90 backdrop-blur-md border-b border-amber-900/30 text-white transition-all duration-300 shadow-xl">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <a href="#home" class="flex items-center space-x-3 group">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-accent-terracotta to-accent-amber flex items-center justify-center font-bold text-lg text-espresso-950 shadow-md group-hover:scale-105 transition-transform">
+                    GR
+                </div>
+                <div>
+                    <span class="font-bold text-lg tracking-tight block text-accent-cream">Gladious Rosary</span>
+                    <span class="text-xs text-amber-200/70 font-medium">Data Analyst</span>
+                </div>
+            </a>
+            
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex items-center space-x-8 font-medium text-sm">
+                <a href="#home" class="hover:text-accent-amber transition-colors">Home</a>
+                <a href="#about" class="hover:text-accent-amber transition-colors">About</a>
+                <a href="#skills" class="hover:text-accent-amber transition-colors">Skills</a>
+                <a href="#services" class="hover:text-accent-amber transition-colors">Services</a>
+                <a href="#projects" class="hover:text-accent-amber transition-colors">Projects</a>
+                <a href="#contact" class="px-5 py-2.5 rounded-xl bg-gradient-to-r from-accent-terracotta to-accent-amber text-espresso-950 font-bold shadow-md hover:shadow-orange-500/20 hover:opacity-95 transition-all">Get in Touch</a>
+            </div>
+            
+            <!-- Mobile Hamburger Button -->
+            <button id="mobile-menu-btn" class="md:hidden text-amber-100 hover:text-white focus:outline-none p-2">
+                <i class="fa-solid fa-bars text-2xl"></i>
+            </button>
+        </div>
+        
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden bg-espresso-950 border-b border-amber-900/40 px-6 py-5 space-y-4">
+            <a href="#home" class="block text-amber-100 hover:text-white font-medium mobile-link">Home</a>
+            <a href="#about" class="block text-amber-100 hover:text-white font-medium mobile-link">About</a>
+            <a href="#skills" class="block text-amber-100 hover:text-white font-medium mobile-link">Skills</a>
+            <a href="#services" class="block text-amber-100 hover:text-white font-medium mobile-link">Services</a>
+            <a href="#projects" class="block text-amber-100 hover:text-white font-medium mobile-link">Projects</a>
+            <a href="#contact" class="block text-center w-full py-3 rounded-xl bg-accent-terracotta text-white font-semibold mobile-link">Get in Touch</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative pt-32 pb-20 md:pt-40 md:pb-32 overflow-hidden bg-gradient-to-b from-espresso-950 via-espresso-900 to-espresso-950 text-white">
+        <div class="absolute inset-0 hero-glow pointer-events-none"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Hero Text Content -->
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                    <div class="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-accent-terracotta/15 border border-accent-terracotta/40 text-accent-amber text-xs font-semibold tracking-wide uppercase">
+                        <i class="fa-solid fa-chart-line"></i>
+                        <span>Data Analyst</span>
+                    </div>
+                    
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight">
+                        Hi, I'm <span class="bg-gradient-to-r from-amber-200 via-accent-amber to-accent-terracotta bg-clip-text text-transparent">Gladious Rosary</span>
+                    </h1>
+                    
+                    <p class="text-lg sm:text-xl text-amber-100/80 font-medium max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+                        Analytical and detail-oriented Data Analyst holding an M.Sc. in Data Analytics. Transforming raw data into actionable insights through automated ETL workflows, custom DAX modeling, and interactive KPI dashboards.
+                    </p>
+                    
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-4">
+                        <a href="#projects" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-gradient-to-r from-accent-terracotta to-accent-amber text-espresso-950 font-bold shadow-lg shadow-orange-950/40 flex items-center justify-center space-x-3 transition-all hover:scale-105">
+                            <span>View Projects</span>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                        <a href="#contact" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-espresso-800/80 hover:bg-espresso-800 text-amber-100 border border-amber-800/50 font-semibold flex items-center justify-center space-x-3 transition-all">
+                            <span>Get in Touch</span>
+                            <i class="fa-regular fa-envelope"></i>
+                        </a>
+                    </div>
+                    
+                    <!-- Quick Badges -->
+                    <div class="pt-6 grid grid-cols-2 sm:grid-cols-3 gap-4 border-t border-amber-900/40 text-left">
+                        <div class="flex items-center space-x-3">
+                            <div class="w-9 h-9 rounded-lg bg-accent-terracotta/15 text-accent-amber flex items-center justify-center">
+                                <i class="fa-solid fa-database"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xs text-amber-200/60">Core Tools</h4>
+                                <p class="text-sm font-semibold text-accent-cream">SQL, Python, Power BI</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <div class="w-9 h-9 rounded-lg bg-accent-terracotta/15 text-accent-amber flex items-center justify-center">
+                                <i class="fa-solid fa-graduation-cap"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xs text-amber-200/60">Education</h4>
+                                <p class="text-sm font-semibold text-accent-cream">M.Sc. Data Analytics</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center space-x-3 col-span-2 sm:col-span-1">
+                            <div class="w-9 h-9 rounded-lg bg-accent-terracotta/15 text-accent-amber flex items-center justify-center">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xs text-amber-200/60">Location</h4>
+                                <p class="text-sm font-semibold text-accent-cream">Chennai, India</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Hero Profile Image Container -->
+                <div class="lg:col-span-5 flex justify-center">
+                    <div class="relative">
+                        <div class="absolute -inset-1.5 bg-gradient-to-r from-accent-terracotta to-accent-amber rounded-3xl blur-xl opacity-40 animate-pulse"></div>
+                        <div class="relative w-72 h-80 sm:w-80 sm:h-96 rounded-2xl overflow-hidden shadow-2xl border-2 border-amber-800/40 bg-espresso-900">
+                            <img src="ProfileImg Fil.jpeg" alt="Gladious Rosary - Data Analyst" class="w-full h-full object-cover object-center transform hover:scale-105 transition-transform duration-500" onerror="this.src='https://placehold.co/400x500/2B1E16/FDF8F5?text=Gladious+Rosary'">
+                        </div>
+                        <div class="absolute -bottom-5 -left-5 bg-espresso-900/90 border border-amber-800/50 backdrop-blur-md px-5 py-3 rounded-2xl shadow-xl flex items-center space-x-3">
+                            <div class="w-10 h-10 rounded-xl bg-accent-terracotta/20 text-accent-amber flex items-center justify-center font-bold text-lg">
+                                <i class="fa-solid fa-award"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs text-amber-200/60">Specialization</p>
+                                <p class="text-sm font-bold text-accent-cream">Data Analyst</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-espresso-900 text-amber-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-accent-amber font-semibold text-sm uppercase tracking-wider">About Me</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-accent-cream mt-2">Professional Background & Education</h2>
+                <div class="w-20 h-1 bg-gradient-to-r from-accent-terracotta to-accent-amber mx-auto mt-4 rounded-full"></div>
+                <p class="mt-4 text-amber-100/80 text-base sm:text-lg">
+                    Passionate about leveraging data-driven decision-making and process optimization to solve complex business challenges.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                
+                <!-- Education Timeline -->
+                <div class="glass-card p-8 rounded-3xl shadow-sm">
+                    <div class="flex items-center space-x-3 mb-8">
+                        <div class="w-10 h-10 rounded-xl bg-accent-terracotta/20 text-accent-amber flex items-center justify-center text-lg font-bold">
+                            <i class="fa-solid fa-graduation-cap"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-accent-cream">Educational Journey</h3>
+                    </div>
+                    
+                    <div class="space-y-8 relative pl-6 before:absolute before:left-2.5 before:top-3 before:bottom-3 before:w-0.5 before:bg-amber-900/50">
+                        <div class="relative">
+                            <div class="absolute -left-6 top-1.5 w-4 h-4 rounded-full bg-accent-terracotta border-4 border-espresso-900"></div>
+                            <span class="text-xs font-semibold text-accent-amber uppercase tracking-wider">Sep 2023 – May 2025</span>
+                            <h4 class="text-lg font-bold text-accent-cream mt-1">M.Sc. Data Analytics</h4>
+                            <p class="text-sm text-amber-100/90 font-medium mt-0.5">Vel Tech Rangarajan Dr.Sagunthala R&D Institute of Science and Technology, Chennai</p>
+                            <p class="text-xs text-amber-200/60 mt-2">Focused on advanced data structures, statistical modeling, machine learning, and enterprise BI architectures.</p>
+                        </div>
+                        
+                        <div class="relative">
+                            <div class="absolute -left-6 top-1.5 w-4 h-4 rounded-full bg-accent-amber border-4 border-espresso-900"></div>
+                            <span class="text-xs font-semibold text-accent-amber uppercase tracking-wider">Sep 2020 – July 2023</span>
+                            <h4 class="text-lg font-bold text-accent-cream mt-1">Bachelor of Computer Application (BCA)</h4>
+                            <p class="text-sm text-amber-100/90 font-medium mt-0.5">Pope John Paul II College of Education, Puducherry</p>
+                            <p class="text-xs text-amber-200/60 mt-2">Strong foundations in software development, database management systems, and programming logic.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Experience Timeline -->
+                <div class="glass-card p-8 rounded-3xl shadow-sm">
+                    <div class="flex items-center space-x-3 mb-8">
+                        <div class="w-10 h-10 rounded-xl bg-accent-amber/20 text-accent-amber flex items-center justify-center text-lg font-bold">
+                            <i class="fa-solid fa-briefcase"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-accent-cream">Work Experience</h3>
+                    </div>
+                    
+                    <div class="space-y-8 relative pl-6 before:absolute before:left-2.5 before:top-3 before:bottom-3 before:w-0.5 before:bg-amber-900/50">
+                        <div class="relative">
+                            <div class="absolute -left-6 top-1.5 w-4 h-4 rounded-full bg-accent-terracotta border-4 border-espresso-900"></div>
+                            <span class="text-xs font-semibold text-accent-amber uppercase tracking-wider">Aug 2026 – Nov 2026 (3 mos)</span>
+                            <h4 class="text-lg font-bold text-accent-cream mt-1">Data Analyst Intern</h4>
+                            <p class="text-sm text-amber-100/90 font-medium mt-0.5">Shanthi IT Solution</p>
+                            <p class="text-xs text-amber-200/60 mt-2">Engineered automated ETL pipelines, cleaned enterprise data in Excel & Power Query, and developed executive KPI dashboards.</p>
+                        </div>
+                        
+                        <div class="relative">
+                            <div class="absolute -left-6 top-1.5 w-4 h-4 rounded-full bg-accent-amber border-4 border-espresso-900"></div>
+                            <span class="text-xs font-semibold text-accent-amber uppercase tracking-wider">Nov 2022 – Dec 2022</span>
+                            <h4 class="text-lg font-bold text-accent-cream mt-1">Python Full Stack Intern</h4>
+                            <p class="text-sm text-amber-100/90 font-medium mt-0.5">Hi-Tech Group of Enterprises</p>
+                            <p class="text-xs text-amber-200/60 mt-2">Used Python (Pandas, NumPy) and MySQL to query, clean, and preprocess backend application datasets. Performed EDA to ensure rigorous data integrity.</p>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills & Expertise Section (2-Column Grid Layout with Custom Uploaded 3D Images) -->
+    <section id="skills" class="py-20 bg-cream-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-warm-terracotta font-bold text-sm uppercase tracking-wider">Technical Proficiency</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-mocha-950 mt-2">Skills & Areas of Expertise</h2>
+                <div class="w-20 h-1 bg-warm-terracotta mx-auto mt-4 rounded-full"></div>
+                <p class="mt-4 text-mocha-900/80 text-base sm:text-lg">
+                    Comprehensive toolkit spanning modern databases, business intelligence platforms, and exploratory data analysis.
+                </p>
+            </div>
+            
+            <!-- 2 Column Grid Layout -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-7xl mx-auto">
+                
+                <!-- Skill Card 1: Data Analysis & Reporting -->
+                <div class="cream-card p-8 rounded-3xl transition-all hover:shadow-xl group flex flex-col sm:flex-row items-center sm:items-start space-y-6 sm:space-y-0 sm:space-x-6">
+                    <div class="w-32 h-32 flex-shrink-0 rounded-2xl overflow-hidden shadow-md bg-cream-100 border border-cream-200">
+                        <img src="Data Analysis & Reporting.jpg" alt="Data Analysis & Reporting" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                    </div>
+                    <div class="flex-1">
+                        <h3 class="text-2xl font-bold text-mocha-950 mb-2 text-center sm:text-left">Data Analysis & Reporting</h3>
+                        <p class="text-xs text-mocha-700 mb-4 text-center sm:text-left">Advanced data processing, MIS reporting, and metric tracking.</p>
+                        <ul class="space-y-2.5 text-sm text-mocha-900 font-medium">
+                            <li class="flex items-center space-x-2"><i class="fa-solid fa-circle-check text-warm-terracotta text-sm"></i><span>Advanced Excel (XLOOKUP, Pivot)</span></li>
+                            <li class="flex items-center space-x-2"><i class="fa-solid fa-circle-check text-warm-terracotta text-sm"></i><span>Power Query & Data Cleaning</span></li>
+                            <li class="flex items-center space-x-2"><i class="fa-solid fa-circle-check text-warm-terracotta text-sm"></i><span>MIS Reporting</span></li>
+                            <li class="flex items-center space-x-2"><i class="fa-solid fa-circle-check text-warm-terracotta text-sm"></i><span>KPI Tracking</span></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Skill Card 2: Visualization & Dashboards -->
+                <div class="cream-card p-8 rounded-3xl transition-all hover:shadow-xl group flex flex-col sm:flex-row items-center sm:items-start space-y-6 sm:space-y-0 sm:space-x-6">
+                    <div class="w-32 h-32 flex-shrink-0 rounded-2xl overflow-hidden shadow-md bg-cream-100 border border-cream-200">
+                        <img src="Visualization & Dashboards.jpg" alt="Visualization & Dashboards" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                    </div>
+                    <div class="flex-1">
+                        <h3 class="text-2xl font-bold text-mocha-950 mb-2 text-center sm:text-left">Visualization & Dashboards</h3>
+                        <p class="text-xs text-mocha-700 mb-4 text-center sm:text-left">Building executive-ready interactive visual stories.</p>
+                        <ul class="space-y-2.5 text-sm text-mocha-900 font-medium">
+                            <li class="flex items-center space-x-2"><i class="fa-solid fa-circle-check text-warm-gold text-sm"></i><span>Power BI & Custom DAX</span></li>
+                            <li class="flex items-center space-x-2"><i class="fa-solid fa-circle-check text-warm-gold text-sm"></i><span>Tableau</span></li>
+                            <li class="flex items-center space-x-2"><i class="fa-solid fa-circle-check text-warm-gold text-sm"></i><span>Interactive Dashboarding</span></li>
+                            <li class="flex items-center space-x-2"><i class="fa-solid fa-circle-check text-warm-gold text-sm"></i><span>Executive KPI Monitoring</span></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Skill Card 3: Databases & Querying -->
+                <div class="cream-card p-8 rounded-3xl transition-all hover:shadow-xl group flex flex-col sm:flex-row items-center sm:items-start space-y-6 sm:space-y-0 sm:space-x-6">
+                    <div class="w-32 h-32 flex-shrink-0 rounded-2xl overflow-hidden shadow-md bg-cream-100 border border-cream-200">
+                        <img src="Databases & Querying.jpg" alt="Databases & Querying" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                    </div>
+                    <div class="flex-1">
+                        <h3 class="text-2xl font-bold text-mocha-950 mb-2 text-center sm:text-left">Databases & Querying</h3>
+                        <p class="text-xs text-mocha-700 mb-4 text-center sm:text-left">Relational schema design and optimized query performance.</p>
+                        <ul class="space-y-2.5 text-sm text-mocha-900 font-medium">
+                            <li class="flex items-center space-x-2"><i class="fa-solid fa-circle-check text-mocha-700 text-sm"></i><span>SQL (Joins, Subqueries)</span></li>
+                            <li class="flex items-center space-x-2"><i class="fa-solid fa-circle-check text-mocha-700 text-sm"></i><span>MySQL Relational Databases</span></li>
+                            <li class="flex items-center space-x-2"><i class="fa-solid fa-circle-check text-mocha-700 text-sm"></i><span>Aggregations & Windows</span></li>
+                            <li class="flex items-center space-x-2"><i class="fa-solid fa-circle-check text-mocha-700 text-sm"></i><span>Data Modeling & Star Schema</span></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Skill Card 4: Programming & Analytics -->
+                <div class="cream-card p-8 rounded-3xl transition-all hover:shadow-xl group flex flex-col sm:flex-row items-center sm:items-start space-y-6 sm:space-y-0 sm:space-x-6">
+                    <div class="w-32 h-32 flex-shrink-0 rounded-2xl overflow-hidden shadow-md bg-cream-100 border border-cream-200">
+                        <img src="Programming & Analytics.jpg" alt="Programming & Analytics" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                    </div>
+                    <div class="flex-1">
+                        <h3 class="text-2xl font-bold text-mocha-950 mb-2 text-center sm:text-left">Programming & Analytics</h3>
+                        <p class="text-xs text-mocha-700 mb-4 text-center sm:text-left">Statistical evaluation and programmatic data wrangling.</p>
+                        <ul class="space-y-2.5 text-sm text-mocha-900 font-medium">
+                            <li class="flex items-center space-x-2"><i class="fa-solid fa-circle-check text-mocha-700 text-sm"></i><span>Python (Pandas, NumPy)</span></li>
+                            <li class="flex items-center space-x-2"><i class="fa-solid fa-circle-check text-mocha-700 text-sm"></i><span>Matplotlib Visualization</span></li>
+                            <li class="flex items-center space-x-2"><i class="fa-solid fa-circle-check text-mocha-700 text-sm"></i><span>Exploratory Data Analysis</span></li>
+                            <li class="flex items-center space-x-2"><i class="fa-solid fa-circle-check text-mocha-700 text-sm"></i><span>Applied Statistics</span></li>
+                        </ul>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-espresso-900 text-amber-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-accent-amber font-semibold text-sm uppercase tracking-wider">Professional Services</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-accent-cream mt-2">Professional Data Services</h2>
+                <div class="w-20 h-1 bg-gradient-to-r from-accent-terracotta to-accent-amber mx-auto mt-4 rounded-full"></div>
+                <p class="mt-4 text-amber-100/80 text-base sm:text-lg">
+                    End-to-end analytical solutions tailored to empower businesses with clarity, speed, and accuracy.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                
+                <!-- Service 1 -->
+                <div class="p-8 rounded-3xl glass-card flex flex-col sm:flex-row items-start space-y-4 sm:space-y-0 sm:space-x-6 hover:shadow-lg transition-all">
+                    <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-accent-terracotta to-amber-700 text-espresso-950 flex-shrink-0 flex items-center justify-center text-2xl shadow-md font-bold">
+                        <i class="fa-solid fa-broom"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold text-accent-cream mb-2">Data Cleaning & Preprocessing</h3>
+                        <p class="text-sm text-amber-100/80 leading-relaxed">
+                            Transforming raw, messy datasets using Excel, Power Query, and Python (Pandas, NumPy) to handle missing values, standardize data formats, and ensure absolute data integrity.
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Service 2 -->
+                <div class="p-8 rounded-3xl glass-card flex flex-col sm:flex-row items-start space-y-4 sm:space-y-0 sm:space-x-6 hover:shadow-lg transition-all">
+                    <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-accent-amber to-orange-600 text-espresso-950 flex-shrink-0 flex items-center justify-center text-2xl shadow-md font-bold">
+                        <i class="fa-solid fa-chart-column"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold text-accent-cream mb-2">Dashboard Design & KPI Reporting</h3>
+                        <p class="text-sm text-amber-100/80 leading-relaxed">
+                            Building dynamic, interactive Power BI and Tableau dashboards to track critical metrics like revenue performance, sales trends, and regional breakdowns.
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Service 3 -->
+                <div class="p-8 rounded-3xl glass-card flex flex-col sm:flex-row items-start space-y-4 sm:space-y-0 sm:space-x-6 hover:shadow-lg transition-all">
+                    <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-amber-600 to-yellow-600 text-espresso-950 flex-shrink-0 flex items-center justify-center text-2xl shadow-md font-bold">
+                        <i class="fa-solid fa-calculator"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold text-accent-cream mb-2">Custom DAX & Metrics Modeling</h3>
+                        <p class="text-sm text-amber-100/80 leading-relaxed">
+                            Developing custom DAX measures (such as Total Sales, Total Orders, and Average Order Value) and relational star-schema data models for robust reporting speed.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Service 4 -->
+                <div class="p-8 rounded-3xl glass-card flex flex-col sm:flex-row items-start space-y-4 sm:space-y-0 sm:space-x-6 hover:shadow-lg transition-all">
+                    <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-orange-600 to-amber-700 text-espresso-950 flex-shrink-0 flex items-center justify-center text-2xl shadow-md font-bold">
+                        <i class="fa-solid fa-magnifying-glass-chart"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold text-accent-cream mb-2">Exploratory Data Analysis & SQL Querying</h3>
+                        <p class="text-sm text-amber-100/80 leading-relaxed">
+                            Querying databases via MySQL and executing statistical analysis to extract insights, uncover customer behavior patterns, and validate backend data structures.
+                        </p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 bg-cream-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-warm-terracotta font-bold text-sm uppercase tracking-wider">Portfolio Showcase</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-mocha-950 mt-2">Data Analyst Projects</h2>
+                <div class="w-20 h-1 bg-warm-terracotta mx-auto mt-4 rounded-full"></div>
+                <p class="mt-4 text-mocha-900/80 text-base sm:text-lg">
+                    Explore real-world Power BI dashboards and analytical pipelines engineered for financial fraud detection, retail forecasting, and workforce intelligence.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Project 1: Financial Fraud Detection -->
+                <div class="cream-card rounded-3xl overflow-hidden flex flex-col group">
+                    <div class="h-52 overflow-hidden relative bg-mocha-900">
+                        <img src="Financial Fraud Detection Dashboard.png" alt="Financial Fraud Detection Dashboard" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-mocha-950/80 via-transparent to-transparent flex items-end p-4">
+                            <span class="px-3 py-1 rounded-full bg-mocha-950/80 text-warm-gold text-xs font-bold backdrop-blur-md border border-amber-900/40">Power BI Dashboard</span>
+                        </div>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+                        <h3 class="text-xl font-bold text-mocha-950">Financial Fraud Detection Dashboard</h3>
+                        <p class="text-sm text-mocha-900/80 leading-relaxed">
+                            Engineered to predict and flag high-risk banking transactions by analyzing anomaly patterns, transaction volumes, and maximum risk thresholds to mitigate financial loss.
+                        </p>
+                        <div class="space-y-2 bg-cream-100 p-4 rounded-xl border border-cream-200 text-xs text-mocha-900">
+                            <p><strong>Transactions:</strong> 778K total analyzed</p>
+                            <p><strong>Flagged Frauds:</strong> 742 instances ($941.88M volume)</p>
+                            <p><strong>Key Focus:</strong> TRANSFER & CASH_OUT mitigation</p>
+                        </div>
+                        <button onclick="openProjectModal('fraud')" class="w-full py-2.5 rounded-xl bg-accent-blue hover:bg-blue-600 text-white font-semibold text-sm transition-colors flex items-center justify-center space-x-2">
+                            <span>View Dashboard Details</span>
+                            <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Project 2: Customer Behavior Dashboard -->
+                <div class="cream-card rounded-3xl overflow-hidden flex flex-col group">
+                    <div class="h-52 overflow-hidden relative bg-mocha-900">
+                        <img src="Customer Behavior Dashboard.png" alt="Customer Behavior Dashboard" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-mocha-950/80 via-transparent to-transparent flex items-end p-4">
+                            <span class="px-3 py-1 rounded-full bg-mocha-950/80 text-warm-gold text-xs font-bold backdrop-blur-md border border-amber-900/40">Power BI Dashboard</span>
+                        </div>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+                        <h3 class="text-xl font-bold text-mocha-950">Customer Behavior Dashboard</h3>
+                        <p class="text-sm text-mocha-900/80 leading-relaxed">
+                            Designed to uncover consumer purchasing patterns, segment buyer demographics, and forecast subscription loyalty trends to optimize retail marketing strategies.
+                        </p>
+                        <div class="space-y-2 bg-cream-100 p-4 rounded-xl border border-cream-200 text-xs text-mocha-900">
+                            <p><strong>Customer Base:</strong> 3.9K individuals evaluated</p>
+                            <p><strong>Subscription Split:</strong> 73% Non-subscribers</p>
+                            <p><strong>Avg Purchase:</strong> $59.76 across categories</p>
+                        </div>
+                        <button onclick="openProjectModal('customer')" class="w-full py-2.5 rounded-xl bg-accent-blue hover:bg-blue-600 text-white font-semibold text-sm transition-colors flex items-center justify-center space-x-2">
+                            <span>View Dashboard Details</span>
+                            <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Project 3: Talent Acquisition & Recruitment Funnel Intelligence Dashboard -->
+                <div class="cream-card rounded-3xl overflow-hidden flex flex-col group">
+                    <div class="h-52 overflow-hidden relative bg-mocha-900">
+                        <img src="Talent Acquisition & Recruitment dashboard.png" alt="Talent Acquisition & Recruitment Funnel Intelligence Dashboard" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-mocha-950/80 via-transparent to-transparent flex items-end p-4">
+                            <span class="px-3 py-1 rounded-full bg-mocha-950/80 text-warm-gold text-xs font-bold backdrop-blur-md border border-amber-900/40">Power BI Dashboard</span>
+                        </div>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+                        <h3 class="text-xl font-bold text-mocha-950">Talent Acquisition & Recruitment Funnel Intelligence Dashboard</h3>
+                        <p class="text-sm text-mocha-900/80 leading-relaxed">
+                            Engineered to evaluate candidate drop-off points, analyze recruitment channel efficiency, and predict pipeline bottlenecks across various hiring stages to optimize talent acquisition strategies.
+                        </p>
+                        <div class="space-y-2 bg-cream-100 p-4 rounded-xl border border-cream-200 text-xs text-mocha-900">
+                            <p><strong>Total Applications:</strong> 378.4K analyzed</p>
+                            <p><strong>Total Offers:</strong> 41K generated</p>
+                            <p><strong>Top Channels:</strong> LinkedIn & Naukri</p>
+                        </div>
+                        <button onclick="openProjectModal('recruitment')" class="w-full py-2.5 rounded-xl bg-accent-blue hover:bg-blue-600 text-white font-semibold text-sm transition-colors flex items-center justify-center space-x-2">
+                            <span>View Dashboard Details</span>
+                            <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Project 4: HR HC Analysis Dashboard -->
+                <div class="cream-card rounded-3xl overflow-hidden flex flex-col group">
+                    <div class="h-52 overflow-hidden relative bg-mocha-900">
+                        <img src="HR HC Analysis Dashboard.png" alt="HR HC Analysis Dashboard" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-mocha-950/80 via-transparent to-transparent flex items-end p-4">
+                            <span class="px-3 py-1 rounded-full bg-mocha-950/80 text-warm-gold text-xs font-bold backdrop-blur-md border border-amber-900/40">Power BI Dashboard</span>
+                        </div>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+                        <h3 class="text-xl font-bold text-mocha-950">HR HC Analysis Dashboard</h3>
+                        <p class="text-sm text-mocha-900/80 leading-relaxed">
+                            Constructed an extensive interactive HR dashboard to analyze employee workforce volume trends, map global geographical distribution, and forecast gender/age diversity metrics across business units.
+                        </p>
+                        <div class="space-y-2 bg-cream-100 p-4 rounded-xl border border-cream-200 text-xs text-mocha-900">
+                            <p><strong>Workforce Volume:</strong> 1000 Total Employees</p>
+                            <p><strong>Geographical Lead:</strong> United States (634 Count)</p>
+                            <p><strong>Diversity Split:</strong> 52% Male | 48% Female</p>
+                        </div>
+                        <button onclick="openProjectModal('hr_headcount')" class="w-full py-2.5 rounded-xl bg-accent-blue hover:bg-blue-600 text-white font-semibold text-sm transition-colors flex items-center justify-center space-x-2">
+                            <span>View Dashboard Details</span>
+                            <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Project 5: Supermarket Sales & Customer Insights Dashboard -->
+                 <div class="cream-card rounded-3xl overflow-hidden flex flex-col group">
+                    <div class="h-52 overflow-hidden relative bg-mocha-900">
+                        <img src="Supermarket_Sales Dashboard.png" alt="Supermarket Sales & Customer Insights Dashboard" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.src='https://placehold.co/400x500/E5D6C5/1E110A?text=Supermarket+Sales+Dashboard'">
+                        <div class="absolute inset-0 bg-gradient-to-t from-mocha-950/80 via-transparent to-transparent flex items-end p-4">
+                            <span class="px-3 py-1 rounded-full bg-mocha-950/80 text-warm-gold text-xs font-bold backdrop-blur-md border border-amber-900/40">Power BI Dashboard</span>
+                        </div>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+                        <h3 class="text-xl font-bold text-mocha-950">Supermarket Sales & Customer Insights Dashboard</h3>
+                        <p class="text-sm text-mocha-900/80 leading-relaxed">
+                            Engineered an end-to-end retail intelligence dashboard tracking revenue metrics, customer demographics, payment channel distributions, and hourly transaction trends.
+                        </p>
+                        <div class="space-y-2 bg-cream-100 p-4 rounded-xl border border-cream-200 text-xs text-mocha-900">
+                            <p><strong>Total Revenue:</strong> $322.97K (1K Total Orders)</p>
+                            <p><strong>Avg Order Value:</strong> $322.97 | Rating: 6.97</p>
+                            <p><strong>Top Payment:</strong> Ewallet (34.74%) & Cash (34.06%)</p>
+                        </div>
+                        <button onclick="openProjectModal('supermarket_sales')" class="w-full py-2.5 rounded-xl bg-accent-blue hover:bg-blue-600 text-white font-semibold text-sm transition-colors flex items-center justify-center space-x-2">
+                            <span>View Dashboard Details</span>
+                            <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-cream-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-warm-terracotta font-bold text-sm uppercase tracking-wider">Get In Touch</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-mocha-950 mt-2">Let's Connect & Collaborate</h2>
+                <div class="w-20 h-1 bg-warm-terracotta mx-auto mt-4 rounded-full"></div>
+                <p class="mt-4 text-mocha-900/80 text-base sm:text-lg">
+                    Have a data project in mind or looking for a dedicated Data Analyst? Reach out through the form or direct contact details below.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+                
+                <!-- Contact Info Cards -->
+                <div class="lg:col-span-5 space-y-6">
+                    <div class="cream-card p-6 rounded-3xl flex items-center space-x-4">
+                        <div class="w-12 h-12 rounded-2xl bg-warm-terracotta/10 text-warm-terracotta flex items-center justify-center text-xl font-bold flex-shrink-0">
+                            <i class="fa-solid fa-envelope"></i>
+                        </div>
+                        <div>
+                            <p class="text-xs text-mocha-700 font-medium">Email Me</p>
+                            <a href="mailto:gladiousemmanuvel@gmail.com" class="text-sm sm:text-base font-bold text-mocha-950 hover:text-warm-terracotta transition-colors">gladiousemmanuvel@gmail.com</a>
+                        </div>
+                    </div>
+                    
+                    <div class="cream-card p-6 rounded-3xl flex items-center space-x-4">
+                        <div class="w-12 h-12 rounded-2xl bg-warm-gold/10 text-warm-gold flex items-center justify-center text-xl font-bold flex-shrink-0">
+                            <i class="fa-solid fa-phone"></i>
+                        </div>
+                        <div>
+                            <p class="text-xs text-mocha-700 font-medium">Call / WhatsApp</p>
+                            <a href="tel:+916369526869" class="text-sm sm:text-base font-bold text-mocha-950 hover:text-warm-terracotta transition-colors">+91 6369526869</a>
+                        </div>
+                    </div>
+                    
+                    <div class="cream-card p-6 rounded-3xl flex items-center space-x-4">
+                        <div class="w-12 h-12 rounded-2xl bg-mocha-700/10 text-mocha-700 flex items-center justify-center text-xl font-bold flex-shrink-0">
+                            <i class="fa-brands fa-linkedin-in"></i>
+                        </div>
+                        <div>
+                            <p class="text-xs text-mocha-700 font-medium">LinkedIn Profile</p>
+                            <a href="https://linkedin.com/in/gladiousrosary" target="_blank" class="text-sm sm:text-base font-bold text-mocha-950 hover:text-warm-terracotta transition-colors">linkedin.com/in/gladiousrosary</a>
+                        </div>
+                    </div>
+                    
+                    <div class="cream-card p-6 rounded-3xl flex items-center space-x-4">
+                        <div class="w-12 h-12 rounded-2xl bg-amber-800/10 text-amber-800 flex items-center justify-center text-xl font-bold flex-shrink-0">
+                            <i class="fa-solid fa-location-dot"></i>
+                        </div>
+                        <div>
+                            <p class="text-xs text-mocha-700 font-medium">Location</p>
+                            <p class="text-sm sm:text-base font-bold text-mocha-950">Chennai, India</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Contact Form -->
+                <div class="lg:col-span-7 cream-card p-8 sm:p-10 rounded-3xl">
+                    <form id="contact-form" onsubmit="handleFormSubmit(event)" class="space-y-6">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-xs font-bold text-mocha-900 uppercase mb-2">Your Name</label>
+                                <input type="text" id="form-name" required class="w-full px-4 py-3.5 rounded-xl bg-cream-50 border border-cream-200 focus:outline-none focus:ring-2 focus:ring-warm-terracotta text-sm text-mocha-950" placeholder="John Doe">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-bold text-mocha-900 uppercase mb-2">Your Email</label>
+                                <input type="email" id="form-email" required class="w-full px-4 py-3.5 rounded-xl bg-cream-50 border border-cream-200 focus:outline-none focus:ring-2 focus:ring-warm-terracotta text-sm text-mocha-950" placeholder="john@example.com">
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <label class="block text-xs font-bold text-mocha-900 uppercase mb-2">Subject</label>
+                            <input type="text" id="form-subject" required class="w-full px-4 py-3.5 rounded-xl bg-cream-50 border border-cream-200 focus:outline-none focus:ring-2 focus:ring-warm-terracotta text-sm text-mocha-950" placeholder="Data Analysis Inquiry / Job Opportunity">
+                        </div>
+                        
+                        <div>
+                            <label class="block text-xs font-bold text-mocha-900 uppercase mb-2">Message</label>
+                            <textarea id="form-message" rows="4" required class="w-full px-4 py-3.5 rounded-xl bg-cream-50 border border-cream-200 focus:outline-none focus:ring-2 focus:ring-warm-terracotta text-sm text-mocha-950" placeholder="Write your message here..."></textarea>
+                        </div>
+                        
+                        <button type="submit" class="w-full py-4 rounded-xl bg-mocha-900 hover:bg-mocha-700 text-white font-bold shadow-lg transition-all flex items-center justify-center space-x-2">
+                            <span>Send Message</span>
+                            <i class="fa-solid fa-paper-plane text-xs"></i>
+                        </button>
+                    </form>
+                    
+                    <!-- Success Notification Box -->
+                    <div id="form-success" class="hidden mt-6 p-4 rounded-xl bg-emerald-50 border border-emerald-200 text-emerald-800 text-center font-medium text-sm">
+                        Thank you! Your message has been successfully sent to Gladious Rosary.
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-mocha-950 text-cream-200 py-12 border-t border-mocha-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between space-y-6 md:space-y-0">
+            <div class="flex items-center space-x-3">
+                <div class="w-8 h-8 rounded-lg bg-gradient-to-tr from-mocha-700 to-warm-terracotta flex items-center justify-center font-bold text-white text-sm">
+                    GR
+                </div>
+                <span class="text-white font-bold tracking-tight">Gladious Rosary</span>
+            </div>
+            
+            <p class="text-xs text-center md:text-left text-cream-200/80">
+                &copy; 2026 Gladious Rosary. All rights reserved. M.Sc. Data Analytics Graduate.
+            </p>
+            
+            <div class="flex space-x-4">
+                <a href="https://linkedin.com/in/gladiousrosary" target="_blank" class="w-9 h-9 rounded-lg bg-mocha-900 hover:bg-warm-terracotta hover:text-white flex items-center justify-center text-cream-100 transition-colors">
+                    <i class="fa-brands fa-linkedin-in text-sm"></i>
+                </a>
+                <a href="mailto:gladiousemmanuvel@gmail.com" class="w-9 h-9 rounded-lg bg-mocha-900 hover:bg-warm-terracotta hover:text-white flex items-center justify-center text-cream-100 transition-colors">
+                    <i class="fa-regular fa-envelope text-sm"></i>
+                </a>
+                <a href="tel:+916369526869" class="w-9 h-9 rounded-lg bg-mocha-900 hover:bg-warm-terracotta hover:text-white flex items-center justify-center text-cream-100 transition-colors">
+                    <i class="fa-solid fa-phone text-sm"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Project Details Modal -->
+<div id="project-modal" class="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm hidden items-center justify-center p-4">
+    <div class="bg-white text-slate-900 rounded-3xl max-w-2xl w-full p-8 relative shadow-2xl border border-gray-100">
+        <button onclick="closeProjectModal()" class="absolute top-6 right-6 w-10 h-10 rounded-full bg-gray-100 hover:bg-gray-200 flex items-center justify-center text-gray-700 font-bold transition-colors">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+        <div id="modal-content">
+            <!-- Dynamic Content Loaded via JS -->
+        </div>
+    </div>
+</div>
+
+<script>
+    // Mobile Menu Toggle
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    
+    if (mobileMenuBtn && mobileMenu) {
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        document.querySelectorAll('.mobile-link').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+    }
+
+    // Project Details Data
+    const projectData = {
+        fraud: {
+            title: "Financial Fraud Detection Dashboard",
+            subtitle: "Power BI Analytics & Risk Mitigation",
+            desc: "Engineered to predict and flag high-risk banking transactions by analyzing anomaly patterns, transaction volumes, and maximum risk thresholds to mitigate financial loss.",
+            workflow: "Leveraged advanced Power BI filtering and relational data modeling to track 778K total transactions, correlating individual transaction amounts with calculated fraud probability scores.",
+            impact: "Successfully isolated 742 flagged frauds totaling $941.88M in fraudulent activity, pinpointing high-risk accounts and mapping vulnerable transaction types (such as TRANSFER and CASH_OUT)."
+        },
+        customer: {
+            title: "Customer Behavior Dashboard",
+            subtitle: "Retail Segmentation & Subscription Forecasting",
+            desc: "Designed to uncover consumer purchasing patterns, segment buyer demographics, and forecast subscription loyalty trends to optimize retail marketing strategies.",
+            workflow: "Processed multi-category retail datasets to evaluate core performance metrics, establishing cross-filtering by subscriber status, gender, age groups, and preferred shipping methods.",
+            impact: "Revealed that non-subscribers account for 73% of the customer base, identified Clothing and Accessories as top revenue-generating categories, with an average purchase value of $59.76."
+        },
+        recruitment: {
+            title: "Talent Acquisition & Recruitment Funnel Intelligence Dashboard",
+            subtitle: "Power BI Recruitment Pipeline & Sourcing Analytics",
+            desc: "Engineered to evaluate candidate drop-off points, analyze recruitment channel efficiency, and predict pipeline bottlenecks across various hiring stages to optimize talent acquisition strategies.",
+            workflow: "Consolidated multi-channel application data into Power BI, tracking 378.4K total applications and 41K total offers while calculating an average resume quality score of 50.03. Implemented rigorous funnel-stage tracking alongside breakdowns by hiring level, job title (e.g., Data Engineering Mid, Data Science Mid), and sourcing channel.",
+            impact: "Successfully identified that LinkedIn and Naukri serve as the highest-yield sourcing channels, tracked applicant volume trends over a multi-year timeline, and mapped the full recruitment funnel conversion—pinpointing drop-offs from an initial 60.67K candidates at Technical Round 1 down to a final stage yield of 12.95K (21.3%) to help recruiters streamline hiring efficiency."
+        },
+        hr_headcount: {
+            title: "HR Headcount Analysis Dashboard",
+            subtitle: "Power BI Workforce & Diversity Analytics",
+            desc: "Constructed an extensive interactive HR dashboard to analyze employee workforce volume trends, map global geographical distribution, and forecast gender/age diversity metrics across business units.",
+            workflow: "Leveraged advanced Power BI filtering and relational data modeling to track 1000 total transaction records (employees), correlating individual age groups and business unit headcount probability scores.",
+            impact: "Successfully identified the primary workforce driver as the United States (634 headcount) across core business units like Specialty Products (266 count), while mapping full demographic splitconversion—pinpointing drop-offs across Male (515) and Female (485) individuals to help HR streamline talent retention efficiency."
+        },
+        supermarket_sales: {
+            title: "Supermarket Sales & Customer Insights Dashboard",
+            subtitle: "Power BI Retail Performance & Customer Behavior Analytics",
+            desc: "Engineered an end-to-end retail intelligence dashboard tracking $322.97K in total sales across 1K orders. Evaluates customer buying power, branch profitability, payment preferences, and hourly transaction velocity.",
+            workflow: "Processed multi-branch supermarket data into Power BI, calculating core DAX metrics including Total Revenue ($322.97K), Total Orders (1K), Average Order Value ($322.97), and Average Customer Rating (6.97). Integrated cross-filtering by City (Mandalay, Naypyitaw, Yangon), Customer Type (Member vs. Normal), and Product Category.",
+            impact: "Revealed that Ewallet (34.74%) and Cash (34.06%) serve as the dominant payment methods over Credit Cards (31.2%). Identified 'Food and beverages' and 'Sports and travel' as leading revenue-generating product categories, mapped peak sales velocity during evening hours (19:00 peak at $40K), and pinpointed higher total spend among female member customers to guide targeted retail marketing strategies."
+        }
+    };
+
+    function openProjectModal(projectId) {
+        const data = projectData[projectId];
+        if (!data) return;
+        
+        const modalContent = document.getElementById('modal-content');
+        modalContent.innerHTML = `
+            <span class="text-xs font-bold text-orange-600 uppercase tracking-wider">${data.subtitle}</span>
+            <h3 class="text-2xl font-extrabold text-gray-900 mt-1 mb-4">${data.title}</h3>
+            <div class="space-y-4 text-sm text-gray-700">
+                <div>
+                    <h4 class="font-bold text-gray-900 mb-1 flex items-center"><i class="fa-solid fa-bullseye text-orange-600 mr-2"></i>Project Overview:</h4>
+                    <p class="leading-relaxed text-gray-700">${data.desc}</p>
+                </div>
+                <div>
+                    <h4 class="font-bold text-gray-900 mb-1 flex items-center"><i class="fa-solid fa-gears text-amber-600 mr-2"></i>Analytical Workflow:</h4>
+                    <p class="leading-relaxed text-gray-700">${data.workflow}</p>
+                </div>
+                <div>
+                    <h4 class="font-bold text-gray-900 mb-1 flex items-center"><i class="fa-solid fa-chart-line text-blue-600 mr-2"></i>Impact & Results:</h4>
+                    <p class="leading-relaxed text-gray-700">${data.impact}</p>
+                </div>
+            </div>
+        `;
+        
+        const modal = document.getElementById('project-modal');
+        modal.classList.remove('hidden');
+        modal.classList.add('flex');
+    }
+
+    function closeProjectModal() {
+        const modal = document.getElementById('project-modal');
+        modal.classList.remove('flex');
+        modal.classList.add('hidden');
+    }
+
+    window.addEventListener('click', (e) => {
+        const modal = document.getElementById('project-modal');
+        if (e.target === modal) {
+            closeProjectModal();
+        }
+    });
+</script>
+
+        function handleFormSubmit(e) {
+            e.preventDefault();
+            const name = document.getElementById('form-name').value;
+            const successBox = document.getElementById('form-success');
+            
+            successBox.innerText = `Thank you, ${name}! Your message has been successfully sent to Gladious Rosary.`;
+            successBox.classList.remove('hidden');
+            
+            document.getElementById('contact-form').reset();
+            
+            setTimeout(() => {
+                successBox.classList.add('hidden');
+            }, 6000);
+        }
+    </script>
+</body>
+</html>
