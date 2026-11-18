@@ -2,7 +2,7 @@
 
 Welcome to my personal portfolio repository! This repository hosts my personal portfolio website built with HTML and Tailwind CSS, showcasing my data analytics projects, dashboards, and technical skillset.
 
-🌐 * **Live Portfolio Site:** [https://gladiousemmanuvel.github.io/Portfolio/](https://gladiousemmanuvel.github.io/Portfolio/)
+🌐 **[Live Portfolio Website](https://gladiousemmanuvel.github.io/Portfolio/)**
 ---
 
 ## 🛠️ Tech Stack & Skills
